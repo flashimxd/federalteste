@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html ng-app="fedApp">
+<head>
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }
+    </style>
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="node_modules/angular-loading-bar/build/loading-bar.min.css">
+    <link type="text/css" rel="stylesheet" href="node_modules/angular-flash-alert/dist/angular-flash.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+    <body layout="row" ng-controller="indexController as index">
+
+            <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" ng-show="isAuth">
+      
+                    <md-toolbar class="md-hue-2">
+                            
+                            <div layout="column" class="md-toolbar-tools-bottom inset">
+                                
+                                <div layout="row">
+                                    <div flex="30">
+                                        <i class="material-icons avatar_format">account_circle</i>
+                                    </div>
+                                    
+                                    <div flex="70" class="name_container">
+                                        <div>{{userData.name}}</div>
+                                        <div>{{userData.email}}</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                    </md-toolbar>
+
+                    <md-list>
+
+                        <md-item ng-repeat="item in menu">
+                            <a ng-href="#{{item.link}}" class="menu_a">
+                                <md-item-content md-ink-ripple layout="row" layout-align="start center" class="item_menu">
+                                    <div class="inset">
+                                    <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+                                    </div>
+                                    <div class="inset">{{item.title}}
+                                    </div>
+                                </md-item-content>
+                            </a>
+                        </md-item>
+
+                        <md-divider></md-divider>
+
+                        <md-subheader>©Rangel Netto Dev 2016</md-subheader>
+
+                    </md-list>
+
+        </md-sidenav>
+
+        <div layout="column" class="relative" layout-fill role="main">
+
+        <md-toolbar style="height: 88px;">
+
+                <div class="md-toolbar-tools">
+
+                    <md-button ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
+                        <ng-md-icon icon="menu"></ng-md-icon>
+                    </md-button>
+
+                    <div layout layout-padding layout-align="center end">
+                        
+                    </div>
+                    <div layout layout-padding layout-align="center end" class="breadcrumb">
+                        <h2 class="md-toolbar-item md-breadcrumb md-headline"> UFMG > {{url_path}}</h2>
+                    </div>
+
+                    <span flex></span>
+
+                    <md-button aria-label="Open Settings" ng-click="logOut($event)" title="Menu" ng-show="isAuth">
+
+                        <i class="power_btn material-icons" title="Sair" >power_settings_new</i>
+                    </md-button>
+
+                </div>
+
+        </md-toolbar>
+
+        <flash-message duration="2000" show-close="true"></flash-message>
+
+        <md-content flex md-scroll-y>
+
+            <ui-view layout="column" layout-fill layout-padding>
+
+            <div class="inset" hide-sm></div>
+
+                <div ng-view layout="row" ng-cloak>
+
+                </div>
+            
+            </ui-view>
+
+        </md-content>
+
+        </div>
+    
+    <script src="/node_modules/angular/angular.min.js"></script>
+    <script src="/node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="/node_modules/angular-aria/angular-aria.min.js"></script>
+    <script src="/node_modules/angular-resource/angular-resource.min.js"></script>
+    <script src="/node_modules/angular-route/angular-route.min.js"></script>
+    <script src="/node_modules/angular-cookies/angular-cookies.min.js"></script>
+    <script src="/node_modules/angular-material/angular-material.min.js"></script>
+    <script src="/node_modules/angular-resource/angular-resource.min.js"></script>
+    <script src="/node_modules/query-string/query-string.js"></script>
+    <script src="/node_modules/angular-oauth2/dist/angular-oauth2.min.js"></script>
+    <script src="/node_modules/angular-flash-alert/dist/angular-flash.min.js"></script>
+    <script src="/node_modules/angular-messages/angular-messages.min.js"></script>
+    <script src="/node_modules/angular-loading-bar/build/loading-bar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/angular-material-icons/0.4.0/angular-material-icons.min.js"></script>
+    
+    <script src="/js/app.js"></script>
+
+    <!-- controllers -->
+    <script src="/js/controllers/indexController.js"></script>
+    <script src="/js/controllers/loginController.js"></script>
+    <script src="/js/controllers/noticiasController.js"></script>
+
+    <!-- services -->
+    <script src="/js/services/user.js"></script>
+    <script src="/js/services/news.js"></script>
+
+</body>
+</html>

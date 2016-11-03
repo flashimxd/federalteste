@@ -1,0 +1,42 @@
+<md-card>
+    <md-card-content layout="row" ng-controller="noticiasController as noticia" ng-cloak>
+        <div flex-xs flex-gt-xs="50" layout="column" class="news_col" ng-repeat="new in news| limitTo: 3">
+            <md-card>
+            <md-card-header>
+                <md-card-avatar>
+                    <i class="avatar_noticias material-icons">account_circle</i>
+                </md-card-avatar>
+                <md-card-header-text>
+                <span class="md-title">{{new.cargo_name}}</span>
+                <span class="md-subhead"><i>{{new.autor_email}}</i></span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-content>
+                </md-card-header>
+                     <label class="user_time"><i class="material-icons">&#xE8B5;</i>{{new.data | date:'dd/MM/yyyy HH:mm:ss'}}</label>
+                </md-card-header>
+                <p>{{new.title}}</p>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                </p>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                </p>
+            </md-card-content>
+
+            </md-card>
+        </div>
+    </md-card-content>
+    <div layout layout-padding layout-align="center end">
+        <div class="paginator" layout="row">
+            <i flex ng-click="getPrevious(page)" class="material-icons" title="Anteriores">&#xE314;</i>
+            <label flex class="label_page">{{page}}</label>
+            <i flex ng-click="getNext(page)" class="material-icons" title="Próximas">keyboard_arrow_right</i>
+        </div>
+        
+    </div>
+
+</md-card>
+

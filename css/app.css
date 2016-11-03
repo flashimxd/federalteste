@@ -1,0 +1,116 @@
+[ng\:cloak], [ng-cloak], .ng-cloak {
+ display: none !important;}
+
+$gray: #eee;
+
+.menu_user{
+    font-weight: bold !important;
+    color: white !important;
+}
+
+md-content.md-default-theme {
+  background-color: $gray;
+}
+md-card {
+  background-color: #fff;
+  h2:first-of-type {
+    margin-top: 0;
+  }
+}
+md-toolbar {
+  .md-button.md-default-theme {
+    border-radius: 99%;
+  }
+}
+h2 {
+  font-weight: 400;
+}
+.md-toolbar-tools-bottom {
+  font-size: small;
+  & :last-child {
+    opacity: 0.8;
+  }
+}
+md-toolbar:not(.md-hue-1),
+.md-fab {
+  fill: #fff;
+}
+md-sidenav {
+  fill: #737373;
+  ng-md-icon {
+    position: relative;
+    top: 5px; 
+  }
+}
+.user-avatar {
+  border-radius: 99%;
+}
+
+.power_btn{
+    margin-top: 77%;
+    font-size: 35px !important;
+    font-weight: bold !important;
+}
+
+.power_btn:hover{
+  color: red;
+}
+
+.name_container{
+    margin-top:7%; 
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.item_menu {
+    cursor: pointer;
+}
+
+.item_menu:hover{
+    opacity: 0.6;
+}
+
+.avatar_format {  
+    font-size: 64px !important;
+ }
+ .menu_a{
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(2,119,189);
+ }
+
+ .container_news div{
+   padding: 8px;
+ }
+
+ .paginator i {
+   font-size: 35px;
+   cursor: pointer
+ }
+
+ .paginator i:hover{
+   color: blue;
+ }
+
+ .label_page{
+    margin-top: 7%;
+    margin-left: 25%;
+    font-size: 24px;
+ }
+
+ .breadcrumb{
+   margin-top: 3%; 
+ }
+
+ .avatar_noticias{
+    font-size: 50px!important;
+    color: rgb(158,158,158);
+ }
+ 
+ .user_time i{
+    margin-top: 20px;
+    line-height: -7px;
+    font-size: 17px;
+    padding: 3px;
+ }

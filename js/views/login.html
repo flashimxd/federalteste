@@ -1,0 +1,38 @@
+<div layout="row" flex style="margin-top: 5%;" ng-controller="loginController">
+    <form layout="column" flex id="content" role="main" name="fedForm" ng-submit="logar()">
+
+            <md-content layout="vertical" flex id="content">
+                <div layout="row" layout-align="center center" layout-fill>
+                    <md-whiteframe class="md-whiteframe-z1" layout="column" flex="30" layout-padding>
+                        <md-content md-theme="docs-dark" style="overflow: hidden;">
+                            
+                            <md-input-container style="width: 100%">
+                                <label>Email</label>
+                                <input ng-model="user.username" name="username" id="username" ng-required="true">
+                                <div ng-messages="fedForm.username.$error" role="alert">
+                                    <div ng-message="required">Email e obrigatório.</div>
+                                </div>
+                            </md-input-container>
+
+                            <md-input-container style="width: 100%">
+                                <label>Senha</label>
+                                <input ng-model="user.password" type="password" name="password" id="password" ng-required="true">
+                                <div ng-messages="fedForm.password.$error" role="alert">
+                                    <div ng-message="required">Senha e obrigatório.</div>
+                                </div>
+                            </md-input-container>
+
+                            <md-input-container layout-align="center center">
+                                <div layout="row" layout-sm="column" layout-margin>
+                                    <md-button type="submit" class="md-raised md-primary" ng-disabled="fedForm.$invalid">Entrar</md-button>
+                                    <md-button type="button" ng-click="resetar()">Resetar</md-button>
+                                </div>
+                            </md-input-container>
+
+                        </md-content>
+                    </md-whiteframe>
+                </div>
+            </md-content>
+
+    </form>
+</div>

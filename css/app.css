@@ -17,6 +17,7 @@ md-card {
     margin-top: 0;
   }
 }
+
 md-toolbar {
   .md-button.md-default-theme {
     border-radius: 99%;
@@ -25,16 +26,19 @@ md-toolbar {
 h2 {
   font-weight: 400;
 }
+
 .md-toolbar-tools-bottom {
   font-size: small;
   & :last-child {
     opacity: 0.8;
   }
 }
+
 md-toolbar:not(.md-hue-1),
 .md-fab {
   fill: #fff;
 }
+
 md-sidenav {
   fill: #737373;
   ng-md-icon {
@@ -42,6 +46,7 @@ md-sidenav {
     top: 5px; 
   }
 }
+
 .user-avatar {
   border-radius: 99%;
 }
@@ -57,9 +62,9 @@ md-sidenav {
 }
 
 .name_container{
-    margin-top:7%; 
-    font-weight: bold;
-    font-size: 15px;
+  margin-top:7%; 
+  font-weight: bold;
+  font-size: 15px;
 }
 
 .item_menu {
@@ -73,6 +78,7 @@ md-sidenav {
 .avatar_format {  
     font-size: 64px !important;
  }
+ 
  .menu_a{
     text-decoration: none;
     font-size: 14px;

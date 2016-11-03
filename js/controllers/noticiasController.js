@@ -15,8 +15,7 @@ angular.module('app.controllers')
                     $rootScope.page = 0;
 
                     for(row of data.items){
-                          let news = {title: row.title, data: row.post_date, id: row.id, autor_email: row.author.email, 
-                                        cargo_name: row.author.name, role: row.author.post_type};
+                          let news = {title: row.title, data: row.post_date, id: row.id, autor_email: row.author.email, cargo_name: row.author.name, role: row.author.post_type};
                           
                           setTimeout(function(){
                             $scope.$apply(function(){

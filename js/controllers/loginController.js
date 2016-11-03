@@ -13,17 +13,17 @@ angular.module('app.controllers')
             
             if($scope.fedForm.$valid){
                     
-                    OAuth.getAccessToken($scope.user).then(function(response){
-                        User.authenticated({},{}, function(data){
-                            $rootScope.isAuth = true;
-                            $cookies.putObject('user', data);
-                            $location.path('/');
-                        });
-                        
-                    }, function(data){
-                        let message = '<strong>Erro!</strong> Login ou senha incorretos.';
-                        Flash.create('danger', message);
-                    })
+                OAuth.getAccessToken($scope.user).then(function(response){
+                    User.authenticated({},{}, function(data){
+                        $rootScope.isAuth = true;
+                        $cookies.putObject('user', data);
+                        $location.path('/');
+                    });
+                    
+                }, function(data){
+                    let message = '<strong>Erro!</strong> Login ou senha incorretos.';
+                    Flash.create('danger', message);
+                })
             }
 
         };
